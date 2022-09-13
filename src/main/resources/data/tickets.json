@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "eventId": 1,
+    "userId": 1,
+    "category": 0,
+    "place": 1
+  },
+  {
+    "id": 2,
+    "eventId": 1,
+    "userId": 1,
+    "category": 0,
+    "place": 2
+  }
+]

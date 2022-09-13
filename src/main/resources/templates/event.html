@@ -1,0 +1,43 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Events</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+<a th:href="@{/home}">home</a>
+<a th:href="@{/event}">events</a>
+<a th:href="@{/ticket}">tickets</a>
+<a th:href="@{/user}">users</a>
+
+<h5>Events</h5>
+
+<table>
+    <thead>
+    <tr>
+        <th> </th>
+        <th> Title </th>
+        <th> Date </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${events.empty}">
+        <td colspan="2"> No Events Available </td>
+    </tr>
+    <tr th:each="event : ${events}">
+        <td></td>
+        <td><span th:text="${event.title}"> Title </span></td>
+        <td><span th:text="${event.date}"> Date </span></td>
+    </tr>
+    </tbody>
+</table>
+
+<h4>Find event by id</h4>
+
+
+<h4>Find event by title</h4>
+
+</body>
+</html>

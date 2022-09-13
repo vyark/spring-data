@@ -1,0 +1,49 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Print</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+<th:form method="POST" th:action="@{/ticket}" th:object="${ticketForm}">
+    <table border="solid">
+        <tr>
+            <th>Title:</th>
+            <th>Date:</th>
+            <th>Firstname:</th>
+            <th>Lastname:</th>
+            <th>Email:</th>
+            <th>Category:</th>
+            <th>Place:</th>
+        </tr>
+        <tr th:each="ticket : ${tickets}">
+            <td>
+                <span th:text="${ticket.event.title}"> </span>
+            </td>
+            <td>
+                <span th:text="${ticket.event.date}"> </span>
+            </td>
+            <td>
+                <span th:text="${ticket.user.firstName}"> </span>
+            </td>
+            <td>
+                <span th:text="${ticket.user.lastName}"> </span>
+            </td>
+            <td>
+                <span th:text="${ticket.user.email}"> </span>
+            </td>
+            <td>
+                <span th:text="${ticket.category}"></span>
+            </td>
+            <td>
+                <span th:text="${ticket.place}"> </span>
+            </td>
+        </tr>
+    </table>
+    <input type="submit" value="Submit"/>
+</th:form>
+</body>
+</html>

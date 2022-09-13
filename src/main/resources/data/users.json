@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "firstName": "John",
+    "lastName": "Smith",
+    "email": "john@mail.com"
+  },
+  {
+    "id": 2,
+    "firstName": "Olga",
+    "lastName": "Shved",
+    "email": "olga@mail.com"
+  },
+  {
+    "id": 3,
+    "firstName": "Stan",
+    "lastName": "Yarkouski",
+    "email": "stan@mail.com"
+  },
+  {
+    "id": 4,
+    "firstName": "Nadia",
+    "lastName": "Dubouskaya",
+    "email": "nadia@mail.com"
+  },
+  {
+    "id": 5,
+    "firstName": "Stefa",
+    "lastName": "Dubouskaya",
+    "email": "stefa@mail.com"
+  },
+  {
+    "id": 6,
+    "firstName": "Daria",
+    "lastName": "Kameisha",
+    "email": "daria@mail.com"
+  },
+  {
+    "id": 7,
+    "firstName": "Irina",
+    "lastName": "Kameisha",
+    "email": "irina@mail.com"
+  },
+  {
+    "id": 8,
+    "firstName": "Michael",
+    "lastName": "Shved",
+    "email": "michael@mail.com"
+  },
+  {
+    "id": 9,
+    "firstName": "Karina",
+    "lastName": "Kross",
+    "email": "karina@mail.com"
+  },
+  {
+    "id": 10,
+    "firstName": "Polina",
+    "lastName": "Jones",
+    "email": "polina@mail.com"
+  }
+]

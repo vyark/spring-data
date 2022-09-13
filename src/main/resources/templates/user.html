@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+</head>
+<body>
+<a th:href="@{/home}">home</a>
+<a th:href="@{/event}">events</a>
+<a th:href="@{/ticket}">tickets</a>
+<a th:href="@{/user}">users</a>
+
+<h5>Users</h5>
+
+<table>
+    <thead>
+    <tr>
+        <th> </th>
+        <th> Firstname </th>
+        <th> Lastname </th>
+        <th> Email </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${users.empty}">
+        <td colspan="2"> No Users Found </td>
+    </tr>
+    <tr th:each="user : ${users}">
+        <td></td>
+        <td><span th:text="${user.firstName}"> Firstname </span></td>
+        <td><span th:text="${user.lastName}"> Lastname </span></td>
+
+        <td><span th:text="${user.email}"> Email </span></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

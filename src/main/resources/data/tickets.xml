@@ -1,0 +1,80 @@
+<tickets>
+    <ticket id="1">
+        <user id="1">
+            <firstName>Jack</firstName>
+            <lastName>Reacher</lastName>
+            <email>jack@mail.com</email>
+        </user>
+        <event id="1">
+            <title>Jazz music</title>
+            <date>1979-10-21T03:31:12</date>
+        </event>
+        <category>STANDARD</category>
+        <place>53</place>
+    </ticket>
+    <ticket id="2">
+        <user id="1">
+            <firstName>Jack</firstName>
+            <lastName>Reacher</lastName>
+            <email>jack@mail.com</email>
+        </user>
+        <event id="1">
+            <title>Jazz music</title>
+            <date>1979-10-21T03:31:12</date>
+        </event>
+        <category>STANDARD</category>
+        <place>54</place>
+    </ticket>
+    <ticket id="3">
+        <user id="2">
+            <firstName>Remington</firstName>
+            <lastName>Steele</lastName>
+            <email>remington@mail.com</email>
+        </user>
+        <event id="1">
+            <title>Jazz music</title>
+            <date>1979-10-21T03:31:12</date>
+        </event>
+        <category>STANDARD</category>
+        <place>44</place>
+    </ticket>
+    <ticket id="4">
+        <user id="3">
+            <firstName>Jonathan</firstName>
+            <lastName>Raven</lastName>
+            <email>jonathan@mail.com</email>
+        </user>
+        <event id="1">
+            <title>Jazz music</title>
+            <date>1979-10-21T03:31:12</date>
+        </event>
+        <category>STANDARD</category>
+        <place>44</place>
+    </ticket>
+    <ticket id="5">
+        <user id="3">
+            <firstName>Jonathan</firstName>
+            <lastName>Raven</lastName>
+            <email>jonathan@mail.com</email>
+        </user>
+        <event id="1">
+            <title>Jazz music</title>
+            <date>1979-10-21T03:31:12</date>
+        </event>
+        <category>STANDARD</category>
+        <place>45</place>
+    </ticket>
+    <ticket id="6">
+        <user id="3">
+            <firstName>Jonathan</firstName>
+            <lastName>Raven</lastName>
+            <email>jonathan@mail.com</email>
+        </user>
+        <event id="1">
+            <title>Jazz music</title>
+            <date>1979-10-21T03:31:12</date>
+        </event>
+        <category>STANDARD</category>
+        <place>46</place>
+    </ticket>
+</tickets>

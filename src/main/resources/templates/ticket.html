@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tickets</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+</head>
+<body>
+<a th:href="@{/home}">home</a>
+<a th:href="@{/event}">events</a>
+<a th:href="@{/ticket}">tickets</a>
+<a th:href="@{/user}">users</a>
+
+<h5>Tickets</h5>
+
+<table>
+    <thead>
+    <tr>
+        <th></th>
+        <th> EventId</th>
+        <th> UserId</th>
+        <th> Category</th>
+        <th> Place</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${tickets.empty}">
+        <td colspan="2"> No Tickets Available</td>
+    </tr>
+    <tr th:each="ticket : ${tickets}">
+        <td></td>
+        <td><span th:text="${ticket.event.id}"> Event ID </span></td>
+        <td><span th:text="${ticket.user.id}"> User ID </span></td>
+        <td><span th:text="${ticket.category}"> Category </span></td>
+        <td><span th:text="${ticket.place}"> Place </span></td>
+    </tr>
+    </tbody>
+</table>
+
+<form action="#" th:action="@{/ticket/pdf}" th:object="${pdf}" method="post">
+    <p><input type="submit" value="Get tickets"/></p>
+</form>
+
+</body>
+</html>
