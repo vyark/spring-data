@@ -42,7 +42,6 @@ public class EventService {
         int skipCount = (pageNum - 1) * pageSize;
 
         return eventDao.values().stream()
-                .filter(event -> event.getDate().equals(day))
                 .skip(skipCount)
                 .limit(pageSize)
                 .collect(Collectors.toList());

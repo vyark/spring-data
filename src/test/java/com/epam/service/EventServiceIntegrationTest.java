@@ -47,7 +47,6 @@ public class EventServiceIntegrationTest {
         Event event = new Event();
         event.setId(3);
         event.setTitle("Pop Music");
-        event.setDate(Date.from(Instant.parse("2023-01-10T20:00:00Z")));
 
         Event result = service.createEvent(event);
 
@@ -59,7 +58,6 @@ public class EventServiceIntegrationTest {
         Event event = new Event();
         event.setId(1);
         event.setTitle("Pop Music");
-        event.setDate(Date.from(Instant.parse("2023-01-10T20:00:00Z")));
 
         Event result = service.updateEvent(event);
 

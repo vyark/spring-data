@@ -2,15 +2,11 @@ package com.epam.dao;
 
 import com.epam.model.Event;
 import com.epam.model.User;
-import com.epam.storage.Storage;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import java.sql.Date;
-import java.time.Instant;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -19,12 +15,8 @@ import static com.epam.storage.Storage.EVENT_PREFIX_ID;
 import static com.epam.storage.Storage.USER_PREFIX_ID;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.mockito.Mockito.when;
 
 public class EventDaoTest {
-    @Mock
-    private Storage storage;
-
     @InjectMocks
     private EventDao dao;
 
@@ -38,9 +30,6 @@ public class EventDaoTest {
         Event event = new Event();
         event.setId(1);
         event.setTitle("Rock Music");
-        event.setDate(Date.from(Instant.parse("2023-10-10T20:00:00Z")));
-
-        when(storage.getRepository()).thenReturn(new HashMap<>());
 
         Event result = dao.put(event.getId(), event);
 
@@ -52,14 +41,10 @@ public class EventDaoTest {
         Event event = new Event();
         event.setId(1);
         event.setTitle("Rock Music");
-        event.setDate(Date.from(Instant.parse("2023-10-10T20:00:00Z")));
 
         Event replaceEvent = new Event();
         replaceEvent.setId(2);
         replaceEvent.setTitle("Pop Music");
-        replaceEvent.setDate(Date.from(Instant.parse("2023-10-10T20:00:00Z")));
-
-        when(storage.getRepository()).thenReturn(new HashMap<>());
 
         dao.put(event.getId(), event);
 
@@ -73,12 +58,9 @@ public class EventDaoTest {
         Event event = new Event();
         event.setId(1);
         event.setTitle("Rock Music");
-        event.setDate(Date.from(Instant.parse("2023-10-10T20:00:00Z")));
 
         Map<String, Object> repository = new HashMap<>();
         repository.put(EVENT_PREFIX_ID + event.getId(), event);
-
-        when(storage.getRepository()).thenReturn(repository);
 
         Event result = dao.get(1);
 
@@ -90,12 +72,9 @@ public class EventDaoTest {
         Event event = new Event();
         event.setId(1);
         event.setTitle("Rock Music");
-        event.setDate(Date.from(Instant.parse("2023-10-10T20:00:00Z")));
 
         Map<String, Object> repository = new HashMap<>();
         repository.put(EVENT_PREFIX_ID + event.getId(), event);
-
-        when(storage.getRepository()).thenReturn(repository);
 
         boolean result = dao.remove(1);
 
@@ -115,7 +94,6 @@ public class EventDaoTest {
         Event event = new Event();
         event.setId(1);
         event.setTitle("Rock Music");
-        event.setDate(Date.from(Instant.parse("2023-10-10T20:00:00Z")));
 
         User user = new User();
         user.setId(1);
@@ -125,8 +103,6 @@ public class EventDaoTest {
         Map<String, Object> repository = new HashMap<>();
         repository.put(EVENT_PREFIX_ID + event.getId(), event);
         repository.put(USER_PREFIX_ID + user.getId(), user);
-
-        when(storage.getRepository()).thenReturn(repository);
 
         List<Event> result = dao.values();
 

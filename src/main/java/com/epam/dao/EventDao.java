@@ -1,52 +1,25 @@
 package com.epam.dao;
 
 import com.epam.model.Event;
-import com.epam.storage.Storage;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import java.math.BigDecimal;
 import java.util.List;
-import java.util.stream.Collectors;
-
-import static com.epam.storage.Storage.EVENT_PREFIX_ID;
 
 @Repository
-public class EventDao {
-    private Storage storage;
+public interface EventDao extends CrudRepository<Event, Integer> {
 
-    public Storage getStorage() {
-        return storage;
-    }
+    //The implementation class of the below methods will be created by Spring at runtime automatically.
+    Event put(long id, Event event);
 
-    @Autowired
-    public void setStorage(Storage storage) {
-        this.storage = storage;
-    }
+    Event replace(long id, Event event);
 
-    public Event put(long id, Event event) {
-        storage.getRepository().put(EVENT_PREFIX_ID + id, event);
-        return event;
-    }
+    Event get(long eventId);
 
-    public Event replace(long id, Event event) {
-        storage.getRepository().replace(EVENT_PREFIX_ID + id, event);
-        return event;
-    }
+    boolean remove(long eventId);
 
-    public Event get(long eventId) {
-        return (Event) storage.getRepository().get(EVENT_PREFIX_ID + eventId);
-    }
+    List<Event> values();
 
-    public boolean remove(long eventId) {
-        if (storage.getRepository().remove(EVENT_PREFIX_ID + eventId) != null) {
-            return true;
-        }
-        throw new IllegalStateException("Event doesn't exist with id: " + eventId);
-    }
-
-    public List<Event> values() {
-        List<String> eventKeys =
-                storage.getRepository().keySet().stream().filter(s -> s.startsWith(EVENT_PREFIX_ID)).collect(Collectors.toList());
-        return eventKeys.stream().map(s -> (Event)storage.getRepository().get(s)).collect(Collectors.toList());
-    }
+    Event getByTicketPrice(long eventId, BigDecimal ticketPrice);
 }

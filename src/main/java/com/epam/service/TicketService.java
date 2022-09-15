@@ -18,10 +18,10 @@ public class TicketService {
 
     @Autowired
     private TicketDao ticketDao;
+
     @Transactional
     public Ticket bookTicket(long userId, long eventId, int place, Ticket.Category category) {
         Ticket ticket = new Ticket();
-        ticket.setId(ticketDao.size() + 1);
         ticket.setEvent(new Event(eventId));
         ticket.setUser(new User(userId));
         ticket.setCategory(category);
