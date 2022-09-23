@@ -3,6 +3,7 @@ package com.epam.facade;
 import com.epam.model.Event;
 import com.epam.model.Ticket;
 import com.epam.model.User;
+import com.epam.model.UserAccount;
 
 import java.util.Date;
 import java.util.List;
@@ -141,5 +142,5 @@ public interface BookingFacade {
 
     List<Ticket> preloadTickets();
 
-    void refillingAccount();
+    UserAccount refillingAccount(int userAccountId);
 }

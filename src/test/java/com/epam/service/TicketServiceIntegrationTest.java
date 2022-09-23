@@ -9,8 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import java.time.Instant;
-import java.util.Date;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -46,7 +44,6 @@ public class TicketServiceIntegrationTest {
         Event event = new Event();
         event.setId(1);
         event.setTitle("Classical Music");
-        event.setDate(Date.from(Instant.parse("2022-12-04T20:00:00Z")));
 
         List<Ticket> result = service.getBookedTickets(event, 5, 1);
 

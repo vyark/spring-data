@@ -33,6 +33,7 @@ public class UserService {
                       .orElseThrow(() -> new IllegalStateException("User does not exist with " +
                               "email: " + email));
     }
+
     @Transactional
     public List<User> getUsersByName(String name, int pageSize, int pageNum) {
         int skipCount = (pageNum - 1) * pageSize;
@@ -43,15 +44,18 @@ public class UserService {
                       .limit(pageSize)
                       .collect(Collectors.toList());
     }
+
     @Transactional
     public User createUser(User user) {
         return userDao.put(user.getId(), user);
     }
+
     @Transactional
     public User updateUser(User user) {
         return userDao.replace(user.getId(), user);
 
     }
+
     @Transactional
     public boolean deleteUser(long userId) {
         return userDao.remove(userId);

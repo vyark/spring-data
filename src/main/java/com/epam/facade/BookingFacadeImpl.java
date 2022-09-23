@@ -4,8 +4,10 @@ import com.epam.mapper.ObjXMLMapper;
 import com.epam.model.Event;
 import com.epam.model.Ticket;
 import com.epam.model.User;
+import com.epam.model.UserAccount;
 import com.epam.service.EventService;
 import com.epam.service.TicketService;
+import com.epam.service.UserAccountService;
 import com.epam.service.UserService;
 import lombok.AllArgsConstructor;
 import lombok.SneakyThrows;
@@ -21,6 +23,8 @@ public class BookingFacadeImpl implements BookingFacade {
     private UserService userService;
     private TicketService ticketService;
     private EventService eventService;
+
+    private UserAccountService userAccountService;
     private ObjXMLMapper objXMLMapper;
 
     @Override
@@ -109,8 +113,7 @@ public class BookingFacadeImpl implements BookingFacade {
         return objXMLMapper.XMLToObj();
     }
 
-    @Override
-    public void refillingAccount(){
-
+    public UserAccount refillingAccount(int userAccountId){
+        return userAccountService.getUserAccountById(userAccountId);
     }
 }

@@ -27,5 +27,6 @@ create table user(
 
 create table userAccount(
     userAccountId int,
+    userId int,
     prepaidAmount numeric
 )

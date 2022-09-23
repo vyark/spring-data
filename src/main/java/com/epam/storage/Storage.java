@@ -22,6 +22,7 @@ public class Storage {
     public static final String TICKET_PREFIX_ID = "ticket:";
     public static final String EVENT_PREFIX_ID = "event:";
     public static final String USER_PREFIX_ID = "user:";
+    public static final String USER_ACCOUNT_PREFIX_ID = "userAccount:";
 
     private Map<String, Object> repository = new HashMap<>();
     @Autowired
